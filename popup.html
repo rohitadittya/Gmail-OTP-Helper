@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gmail OTP Helper</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <div class="brand-mark" aria-hidden="true">G</div>
+        <div>
+          <h1>Gmail OTP Helper</h1>
+          <p class="subtitle">Private codes, ready when you need them.</p>
+        </div>
+      </header>
+
+      <section id="setup-view" class="view" hidden>
+        <h2>Create your session PIN</h2>
+        <p>Choose a PIN with 8–128 characters. You’ll enter it once after each Chrome restart.</p>
+        <form id="setup-form">
+          <label for="new-pin">PIN</label>
+          <input id="new-pin" type="password" minlength="8" maxlength="128" autocomplete="new-password" required>
+          <label for="confirm-pin">Confirm PIN</label>
+          <input id="confirm-pin" type="password" minlength="8" maxlength="128" autocomplete="new-password" required>
+          <button class="primary" type="submit">Create PIN</button>
+        </form>
+      </section>
+
+      <section id="unlock-view" class="view" hidden>
+        <h2>Unlock this session</h2>
+        <p>Your codes stay hidden until you enter your PIN.</p>
+        <form id="unlock-form">
+          <label for="pin">PIN</label>
+          <input id="pin" type="password" maxlength="128" autocomplete="current-password" required>
+          <button class="primary" type="submit">Unlock</button>
+        </form>
+      </section>
+
+      <section id="app-view" class="view" hidden>
+        <div class="status-row">
+          <span id="gmail-status" class="status-dot"></span>
+          <span id="gmail-label">Checking Gmail connection…</span>
+        </div>
+        <p id="poll-status" class="muted"></p>
+        <div id="code-list" class="code-list"></div>
+        <button id="connect-button" class="primary" type="button">Connect Gmail</button>
+        <button id="lock-button" class="secondary" type="button">Lock extension</button>
+        <p class="privacy-note">Codes are kept in temporary session memory and cleared when Chrome closes.</p>
+      </section>
+
+      <div id="message" class="message" role="status" aria-live="polite"></div>
+    </main>
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>

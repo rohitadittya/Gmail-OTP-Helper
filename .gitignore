@@ -1,0 +1,4 @@
+# Local OAuth configuration and generated Chrome extension manifest
+.env
+manifest.json
+

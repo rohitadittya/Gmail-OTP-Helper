@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Gmail OTP Helper",
+  "version": "0.1.0",
+  "description": "Find recent verification codes in Gmail and show them in Chrome after you unlock the extension.",
+  "permissions": ["identity", "storage", "windows", "offscreen", "clipboardWrite", "tabs", "scripting"],
+  "host_permissions": ["https://gmail.googleapis.com/*", "http://*/*", "https://*/*"],
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Gmail OTP Helper",
+    "default_popup": "popup.html"
+  },
+  "oauth2": {
+    "client_id": "SET_BY_BUILD_SCRIPT",
+    "scopes": ["https://www.googleapis.com/auth/gmail.readonly"]
+  }
+}
