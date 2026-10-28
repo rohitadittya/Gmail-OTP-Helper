@@ -11,6 +11,9 @@ Gmail OTP Helper is a personal Chrome extension that finds recent one-time verif
 
 It does not read SMS, send email, or use a cloud backend.
 
+![alt text](./app-screenshots/app-locked.png)
+![alt text](./app-screenshots/app-with-code.png)
+![alt text](./app-screenshots/toast.png)
 ## 2. How to use it
 
 ### First-time Google setup
